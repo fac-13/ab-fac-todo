@@ -11,7 +11,7 @@
     "tap-spec": "^4.1.1"
   },
   "scripts": {
-    "test": "nyc tape test.js | tap-spec"
+    "test": "tape test.js | tap-spec"
   },
   "repository": {
     "type": "git",
