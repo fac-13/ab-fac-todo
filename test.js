@@ -68,6 +68,16 @@ test('Delete: No deletion arg passed', function (t) {
   ];
   t.deepEqual(actual, expected, 'Arrays are cloned');
 
+test("testing that the newTodo is added to the array", function(t) {
+  var actual = todoFunctions.addTodo([], { description: "hi" }); // the 'todoFunction' refers to the name of the variable you require (NOT the name of the object in the other file)
+  var last = actual[actual.length - 1].description;
+  if (last === "hi") {
+    t.pass();
+  } else {
+    t.fail();
+  }
+  t.end();
+});
 
  test('Delete: Remove id of 1', function (t) {
    var actual = todoFunctions.deleteTodo(array,1);
