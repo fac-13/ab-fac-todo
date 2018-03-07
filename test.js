@@ -9,6 +9,40 @@ test('Tape is working', function (t) {
   t.end();
 });
 
+// TESTS FOR NEW TO DO //
+
+test("test a todo is an array", function(t) {
+  var actual = todoFunctions.addTodo([], {}); // the 'todoFunction' refers to the name of the variable you require (NOT the name of the object in the other file)
+
+  if (Array.isArray(actual)) {
+    t.pass();
+  } else {
+    t.fail();
+  }
+  t.end();
+});
+
+test("testing that the array only contains objects unless empty", function(t) {
+  var actual = todoFunctions.addTodo([], {}); // the 'todoFunction' refers to the name of the variable you require (NOT the name of the object in the other file)
+  for (var i = 0; i < actual.length; i++) {
+    if (typeof actual[i] !== "object" || Array.isArray(actual[i])) {
+      t.fail("this array contains something other than objects");
+    }
+  }
+  t.pass("this array only contains objects");
+  t.end();
+});
+
+test("testing that the newTodo is added to the array", function(t) {
+  var actual = todoFunctions.addTodo([], { description: "hi" }); // the 'todoFunction' refers to the name of the variable you require (NOT the name of the object in the other file)
+  var last = actual[actual.length - 1].description;
+  if (last === "hi") {
+    t.pass();
+  } else {
+    t.fail();
+  }
+  t.end();
+});
 
 // TESTS FOR TO DO ITEM DELETION //
 var array = [
@@ -21,6 +55,7 @@ var array = [
 ];
 var emptyArray = [];
 
+
 test('Delete: No deletion arg passed', function (t) {
   var actual = todoFunctions.deleteTodo(array);
   var expected = [
@@ -32,8 +67,6 @@ test('Delete: No deletion arg passed', function (t) {
     { id: 5, description: 'make 5 eggs', done: true },
   ];
   t.deepEqual(actual, expected, 'Arrays are cloned');
-  t.end();
-});
 
 
  test('Delete: Remove id of 1', function (t) {
@@ -91,26 +124,11 @@ test('Delete: Non existent id pass', function (t) {
   t.end();
 });
 
-// TESTS FOR TO DO ITEM SORT //
-var arrSort = [
-  { id: 0, description: 'tea', done: false },
-  { id: 1, description: 'eggs', done: true },
-  { id: 2, description: 'avocado', done: true },
-  { id: 3, description: 'bacon', done: true },
-  { id: 4, description: 'milk', done: true },
-  { id: 5, description: 'tomatoes', done: true },
-];
 
-test('Sort: alphabetical A - Z', function (t) {
-  var actual = todoFunctions.sortTodos(arrSort, 'AtoZ');
-  var expected = [
-    { id: 2, description: 'avocado', done: true },
-    { id: 3, description: 'bacon', done: true },
-    { id: 1, description: 'eggs', done: true },
-    { id: 4, description: 'milk', done: true },
-    { id: 0, description: 'tea', done: false },
-    { id: 5, description: 'tomatoes', done: true },
-  ];
-  t.deepEqual(actual, expected, 'Sorts by alphabetical description');
-  t.end();
-});
+// TESTS FOR TO DO ITEM MARK //
+
+
+
+
+
+// TESTS FOR TO DO ITEM SORT //
