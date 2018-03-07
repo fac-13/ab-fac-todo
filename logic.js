@@ -31,7 +31,7 @@ var todoFunctions = {
 
     var idnum = this.generateId();
     newTodo["id"] = idnum;
-
+    newTodo["done"] = false;
     var clone = this.cloneArrayOfObjects(todos).concat(newTodo);
 
     return clone;

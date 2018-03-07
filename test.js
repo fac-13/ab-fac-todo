@@ -46,3 +46,15 @@ test("testing that the newtodo has an id", function(t) {
 
   t.end();
 });
+
+test("testing that the newtodo has a done property", function(t) {
+  var actual = todoFunctions.addTodo([], { description: "hi" }); // the 'todoFunction' refers to the name of the variable you require (NOT the name of the object in the other file)
+  for (var i = 0; i < actual.length; i++) {
+    if (!actual[i].hasOwnProperty("done")) {
+      t.fail();
+    }
+  }
+  t.pass();
+
+  t.end();
+});
