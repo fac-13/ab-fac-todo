@@ -3,12 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "dom.js",
-  "dependencies": {
-    "tape": "^4.9.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "nyc": "^11.4.1",
-    "tap-spec": "^4.1.1"
+    "tap-spec": "^4.1.1",
+    "tape": "^4.9.0",
+    "nyc": "^11.4.1"
   },
   "scripts": {
     "test": "tape test.js | tap-spec"
