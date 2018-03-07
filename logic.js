@@ -1,6 +1,8 @@
 // Part 1. Fill in any missing parts of the todoFunction object!
 // you can access these on todo.todoFunctions
 // For part one we expect you to use tdd
+// use this 
+
 
 var todoFunctions = {
   // todoFunctions.generateId() will give you a unique id
@@ -33,6 +35,8 @@ var todoFunctions = {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // return a new array, this should not contain any todo with an id of idToDelete
     // hint: array.filter
+return todos;
+
   },
   markTodo: function(todos, idToMark) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
@@ -54,4 +58,4 @@ var todoFunctions = {
 // http://www.matteoagosti.com/blog/2013/02/24/writing-javascript-modules-for-both-browser-and-node/
 if (typeof module !== "undefined") {
   module.exports = todoFunctions;
-}
+};
