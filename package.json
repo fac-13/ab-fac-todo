@@ -1,0 +1,24 @@
+{
+  "name": "ab-fac-todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dom.js",
+  "dependencies": {
+    "tape": "^4.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fac-13/ab-fac-todo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fac-13/ab-fac-todo/issues"
+  },
+  "homepage": "https://github.com/fac-13/ab-fac-todo#readme"
+}
