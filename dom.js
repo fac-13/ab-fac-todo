@@ -29,6 +29,9 @@
     todoNode.appendChild(deleteButtonNode);
 
     // add markTodo button
+    
+
+
 
     // add classes for css
 
@@ -45,6 +48,7 @@
       var description = event.target[0].value;
       var newState = todoFunctions.addTodo(state, {description: description});
       update(newState);
+      addTodoForm.reset(); // clears the description field in the form on submission.
     });
   }
 
