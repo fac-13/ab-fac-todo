@@ -33,7 +33,7 @@ var todoFunctions = {
 
     var idnum = this.generateId();
     newTodo["id"] = idnum;
-
+    newTodo["done"] = false;
     var clone = this.cloneArrayOfObjects(todos).concat(newTodo);
 
     return clone;
@@ -56,7 +56,21 @@ var todoFunctions = {
     // in the new todo array, all elements will remain unchanged except the one with id: idToMark
     // this element will have its done value toggled
     // hint: array.map
+
+    var cloneTodos = todoFunctions.cloneArrayOfObjects(todos);
+    return clone = cloneTodos.map(function(value){
+      if(value.id === idToMark) {
+        if(value.done === false) {
+          value.done = true;
+        } else if(value.done === true) {
+          valie.done = false;
+        }
+      }
+      return value;
+    });
   },
+
+
   sortTodos: function(todos, sortFunction) {
     // stretch goal! Do this last
     // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
