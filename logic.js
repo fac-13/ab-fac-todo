@@ -59,7 +59,7 @@ var todoFunctions = {
         if(value.done === false) {
           value.done = true;
         } else if(value.done === true) {
-          valie.done = false;
+          value.done = false;
         }
       }
       return value;
