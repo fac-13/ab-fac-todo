@@ -56,17 +56,19 @@ var array = [
 var emptyArray = [];
 
 
-test('Delete: No deletion arg passed', function (t) {
+test("Delete: No deletion arg passed", function(t) {
   var actual = todoFunctions.deleteTodo(array);
   var expected = [
-    { id: 0, description: 'make tea', done: false },
-    { id: 1, description: 'make 1 eggs', done: true },
-    { id: 2, description: 'make 2 eggs', done: true },
-    { id: 3, description: 'make 3 eggs', done: true },
-    { id: 4, description: 'make 4 eggs', done: true },
-    { id: 5, description: 'make 5 eggs', done: true },
+    { id: 0, description: "make tea", done: false },
+    { id: 1, description: "make 1 eggs", done: true },
+    { id: 2, description: "make 2 eggs", done: true },
+    { id: 3, description: "make 3 eggs", done: true },
+    { id: 4, description: "make 4 eggs", done: true },
+    { id: 5, description: "make 5 eggs", done: true }
   ];
-  t.deepEqual(actual, expected, 'Arrays are cloned');
+  t.deepEqual(actual, expected, "Arrays are cloned");
+  t.end();
+}); 
 
 test("testing that the newTodo is added to the array", function(t) {
   var actual = todoFunctions.addTodo([], { description: "hi" }); // the 'todoFunction' refers to the name of the variable you require (NOT the name of the object in the other file)
@@ -134,11 +136,17 @@ test('Delete: Non existent id pass', function (t) {
   t.end();
 });
 
-
-// TESTS FOR TO DO ITEM MARK //
-
-
-
-
-
-// TESTS FOR TO DO ITEM SORT //
+test("Sort: Sort Array Objects", function(t) {
+  var actual = todoFunctions.sortTodos(array);
+  console.log(actual);
+  var expected = [
+    { id: 1, description: "make 1 eggs", done: true },
+    { id: 2, description: "make 2 eggs", done: true },
+    { id: 3, description: "make 3 eggs", done: true },
+    { id: 4, description: "make 4 eggs", done: true },
+    { id: 5, description: "make 5 eggs", done: true },
+    { id: 0, description: "make tea", done: false },
+  ];
+  t.deepEqual(actual, expected, "Object id 3 removed");
+  t.end();
+});
