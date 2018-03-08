@@ -43,8 +43,16 @@
     // This marks the todo as done or not done
     checkbox.addEventListener('click', function () {
       var newState = todoFunctions.markTodo(state, todo.id);
-      state = newState;
+      update(newState);
     });
+
+    // Add correct attribute back to checkbox after markTodo
+    // Needs to be done this way as the update func resets the whole list of todos 
+    if (todo.done) {
+      checkbox.setAttribute('checked', 'checked');
+    } else {
+      checkbox.removeAttribute('checked');
+    }
 
     return todoNode;
   };
@@ -83,28 +91,28 @@
   };
 
 
-var sortButton = document.getElementById("az");
-sortButton.addEventListener("click", function(){
-  var newarr = todoFunctions.sortTodos(state);
-  update(newarr);
-});
+  var sortButton = document.getElementById("az");
+  sortButton.addEventListener("click", function () {
+    var newarr = todoFunctions.sortTodos(state);
+    update(newarr);
+  });
 
 
-var newtoold= document.getElementById('newtoold');
-newtoold.addEventListener("click", function() {
-  update(state.reverse());
-});
+  var newtoold = document.getElementById('newtoold');
+  newtoold.addEventListener("click", function () {
+    update(state.reverse());
+  });
 
-newtoold.addEventListener('click', function(){
-  var newoldbutton = document.getElementById('newtoold');
-  if (newoldbutton.textContent === 'New to Old'){
-  newoldbutton.textContent = 'Old to New'
-} else {
-  newoldbutton.textContent = 'New to Old'
-}
+  newtoold.addEventListener('click', function () {
+    var newoldbutton = document.getElementById('newtoold');
+    if (newoldbutton.textContent === 'New to Old') {
+      newoldbutton.textContent = 'Old to New'
+    } else {
+      newoldbutton.textContent = 'New to Old'
+    }
 
-}
-);
+  }
+  );
 
 
   if (container) renderState(state);
