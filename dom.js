@@ -75,18 +75,29 @@
   };
 
 
-var sortButton = document.getElementById("a-z");
-var newarr = todoFunctions.sortTodos(state);
-console.log(newarr);
+var sortButton = document.getElementById("az");
 sortButton.addEventListener("click", function(){
+  var newarr = todoFunctions.sortTodos(state);
   update(newarr);
-
-var sortButton = document.getElementById("z-a");
-var newarr = todoFunctions.sortTodos(state);
-console.log(newarr);
-sortButton.addEventListener("click", function(){
-  update(newarr);
-
 });
+
+
+var newtoold= document.getElementById('newtoold');
+newtoold.addEventListener("click", function() {
+  update(state.reverse());
+});
+
+newtoold.addEventListener('click', function(){
+  var newoldbutton = document.getElementById('newtoold');
+  if (newoldbutton.textContent === 'New to Old'){
+  newoldbutton.textContent = 'Old to New'
+} else {
+  newoldbutton.textContent = 'New to Old'
+}
+
+}
+);
+
+
   if (container) renderState(state);
 })();

@@ -66,7 +66,7 @@ var todoFunctions = {
     });
   },
 
-  sortTodos: function(todos, sortFunction) {
+  sortTodos: function(todos) {
     // stretch goal! Do this last
     // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
     // sortFunction will have same signature as the sort function in array.sort
@@ -82,8 +82,11 @@ var todoFunctions = {
       return 0; //default return value (no sorting)
     });
     return cloneTodos;
-  } 
-};
+  }
+}
+
+
+
 
 // Why is this if statement necessary?
 // The answer has something to do with needing to run code both in the browser and in Node.js
