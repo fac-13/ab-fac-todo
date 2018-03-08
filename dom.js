@@ -20,7 +20,7 @@
     var displayDescription = todo.description;
     // add span holding description
     var text = document.createTextNode(displayDescription);
-    '<span style="color:red">' + todoNode.appendChild(text) + '</span>';
+    todoNode.appendChild(text);
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
     deleteButtonNode.addEventListener('click', function(event) {
