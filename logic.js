@@ -58,8 +58,8 @@ var todoFunctions = {
       if(value.id === idToMark) {
         if(value.done === false) {
           value.done = true;
-        } else if(value.done === true) {
-          value.done = false;
+        } else if(value.done === true) { // not covered in current tests
+          value.done = false; // not covered in current tests
         }
       }
       return value;
