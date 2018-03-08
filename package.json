@@ -6,7 +6,8 @@
   "dependencies": {},
   "devDependencies": {
     "tap-spec": "^4.1.1",
-    "tape": "^4.9.0"
+    "tape": "^4.9.0",
+    "nyc": "^11.4.1"
   },
   "scripts": {
     "test": "tape test.js | tap-spec"
