@@ -29,7 +29,9 @@
     // add span holding description 
     var text = document.createTextNode(displayDescription);
     todoNode.appendChild(text);
-
+    // todoNode.addEventListener("click", function() {
+    //   prompt("Edit your task",displayDescription);
+    // });
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
     deleteButtonNode.addEventListener('click', function (event) {
@@ -79,6 +81,31 @@
     // you may want to add a class for css
     container.replaceChild(todoListNode, container.firstChild);
   };
+
+
+var sortButton = document.getElementById("az");
+sortButton.addEventListener("click", function(){
+  var newarr = todoFunctions.sortTodos(state);
+  update(newarr);
+});
+
+
+var newtoold= document.getElementById('newtoold');
+newtoold.addEventListener("click", function() {
+  update(state.reverse());
+});
+
+newtoold.addEventListener('click', function(){
+  var newoldbutton = document.getElementById('newtoold');
+  if (newoldbutton.textContent === 'New to Old'){
+  newoldbutton.textContent = 'Old to New'
+} else {
+  newoldbutton.textContent = 'New to Old'
+}
+
+}
+);
+
 
   if (container) renderState(state);
 })();
