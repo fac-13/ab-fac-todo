@@ -8,17 +8,23 @@
 </head>
 
 <body>
+  <label aria-label="name">
+    <input type="checkbox">
+  </label>
+
   <div id="sort-AZ">
-    <button aria-label='sort todos from old to new or new to old' id='newtoold'>New to Old</button>
-    <button aria-label='sort todos from A-Z' id='az'>A-Z</button>
+    <button name='sort todos from old to new or new to old' id='newtoold'>New to Old</button>
+    <button name='sort todos from old to new or new to old' id='az'>A-Z</button>
   </div>
   <div id="todo-container">
     <ul>
     </ul>
   </div>
   <form aria-label='add new todo' id="add-todo">
-    <input type="text" aria-label="add new todo" name="description" value="">
-    <input type="submit" aria-label="submit new todo" name="submit-button" value="Submit">
+    <label for='add-new-todo'></label>
+    <input type="text" id='add-new-todo' aria-label="add new todo" name="description" value="">
+    <label for='submit button'></label>
+    <input id='submit button' type="submit" aria-label="submit new todo" name="submit-button" value="Submit">
   </form>
 </body>
 <script type="text/javascript" src="./logic.js"></script>
