@@ -30,6 +30,9 @@
     todoNode.appendChild(deleteButtonNode);
 
     // add markTodo button
+    
+
+
 
     // add classes for css
 
@@ -42,12 +45,11 @@
       // https://developer.mozilla.org/en-US/docs/Web/Events/submit
       // what does event.preventDefault do?
       // what is inside event.target?
-
-      var description = '?'; // event.target ....
-
-      // hint: todoFunctions.addTodo
-      var newState = []; // ?? change this!
+      event.preventDefault();
+      var description = event.target[0].value;
+      var newState = todoFunctions.addTodo(state, {description: description});
       update(newState);
+      addTodoForm.reset(); // clears the description field in the form on submission.
     });
   }
 
