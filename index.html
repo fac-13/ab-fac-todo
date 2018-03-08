@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
 
 <head>
   <meta charset="utf-8">
@@ -9,16 +9,16 @@
 
 <body>
   <div id="sort-AZ">
-<button id='newtoold'>New to Old</button>
-<button id='az'>A-Z</button>
+    <button aria-label='sort todos from old to new or new to old' id='newtoold'>New to Old</button>
+    <button aria-label='sort todos from A-Z' id='az'>A-Z</button>
   </div>
   <div id="todo-container">
     <ul>
     </ul>
   </div>
-  <form id="add-todo">
-    <input type="text" name="description" value="">
-    <input type="submit" name="" value="Submit">
+  <form aria-label='add new todo' id="add-todo">
+    <input type="text" aria-label="add new todo" name="description" value="">
+    <input type="submit" aria-label="submit new todo" name="submit-button" value="Submit">
   </form>
 </body>
 <script type="text/javascript" src="./logic.js"></script>
