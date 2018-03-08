@@ -8,9 +8,9 @@
   var addTodoForm = document.getElementById('add-todo');
 
   var state = [
-    { id: -3, description: 'first todo' },
-    { id: -2, description: 'second todo' },
-    { id: -1, description: 'third todo' },
+    { id: -3, description: 'get fit' },
+    { id: -2, description: 'phone FAC' },
+    { id: -1, description: 'learn DOM' },
   ]; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
@@ -21,6 +21,9 @@
     // add span holding description
     var text = document.createTextNode(displayDescription);
     todoNode.appendChild(text);
+    // todoNode.addEventListener("click", function() {
+    //   prompt("Edit your task",displayDescription);
+    // });
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
     deleteButtonNode.addEventListener('click', function(event) {
@@ -71,5 +74,19 @@
     container.replaceChild(todoListNode, container.firstChild);
   };
 
+
+var sortButton = document.getElementById("a-z");
+var newarr = todoFunctions.sortTodos(state);
+console.log(newarr);
+sortButton.addEventListener("click", function(){
+  update(newarr);
+
+var sortButton = document.getElementById("z-a");
+var newarr = todoFunctions.sortTodos(state);
+console.log(newarr);
+sortButton.addEventListener("click", function(){
+  update(newarr);
+
+});
   if (container) renderState(state);
 })();

@@ -71,6 +71,17 @@ var todoFunctions = {
     // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
     // sortFunction will have same signature as the sort function in array.sort
     // hint: array.slice, array.sort
+    var cloneTodos = todoFunctions.cloneArrayOfObjects(todos);
+    cloneTodos.sort(function(a, b) {
+      var descA = a.description,
+        descB = b.description;
+      if (descA < descB)
+        //sort string ascending
+        return -1;
+      if (descA > descB) return 1;
+      return 0; //default return value (no sorting)
+    });
+    return cloneTodos;
   } 
 };
 
