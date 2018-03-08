@@ -21,9 +21,12 @@
 
     // add a checkbox
     var checkbox = document.createElement("input");
+    var lab = document.createElement("label");
+    checkbox.setAttribute("aria-label", "checkbox");
     checkbox.setAttribute("role", "checkbox");
     checkbox.type = "checkbox";
-    todoNode.appendChild(checkbox);
+    var checklab = lab.appendChild(checkbox);
+    todoNode.appendChild(checklab);
 
     // add span holding description
     var text = document.createTextNode(displayDescription);
