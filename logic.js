@@ -43,9 +43,9 @@ var todoFunctions = {
     // return a new array, this should not contain any todo with an id of idToDelete
     // hint: array.filter
     var cloneTodos = todoFunctions.cloneArrayOfObjects(todos);
-    var nonIdMatch = cloneTodos.filter(function(todoObj){
-    if (todoObj.id !== idToDelete) {
-      return todoObj;
+    var nonIdMatch = cloneTodos.filter(function(todoObj) {
+      if (todoObj.id !== idToDelete) {
+        return todoObj;
       }
     });
     return nonIdMatch;
@@ -76,13 +76,37 @@ var todoFunctions = {
     // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
     // sortFunction will have same signature as the sort function in array.sort
     // hint: array.slice, array.sort
-  }
-};
+    var cloneTodos = todoFunctions.cloneArrayOfObjects(todos);
+    fucntion sort 
 
+    if (sortFunction = "A-Z") {
+    cloneTodos.sort(function(a, b) {
+      var descA = a.description,
+        descB = b.description;
+      if (descA < descB)
+        //sort string ascending
+        return -1;
+      if (descA > descB) return 1;
+      return 0; //default return value (no sorting)
+    });
+  } else if{
+    if (sortFunction = "Z-A") {
+    cloneTodos.sort(function(a, b) {
+      var descA = a.description,
+        descB = b.description;
+      if (descA < descB)
+        //sort string ascending
+        return -1;
+      if (descA > descB) return 1;
+      return 0; //default return value (no sorting)
+  } }
+    return cloneTodos;
+  }
+}
 // Why is this if statement necessary?
 // The answer has something to do with needing to run code both in the browser and in Node.js
 // See this article for more details:
 // http://www.matteoagosti.com/blog/2013/02/24/writing-javascript-modules-for-both-browser-and-node/
 if (typeof module !== "undefined") {
   module.exports = todoFunctions;
-};
+  }

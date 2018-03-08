@@ -13,7 +13,6 @@ test('Tape is working', function (t) {
 
 test("test a todo is an array", function (t) {
   var actual = todoFunctions.addTodo([], {}); // the 'todoFunction' refers to the name of the variable you require (NOT the name of the object in the other file)
-
   if (Array.isArray(actual)) {
     t.pass();
   } else {
@@ -52,7 +51,6 @@ test("testing that the newtodo has a done property", function (t) {
     }
   }
   t.pass();
-
   t.end();
 });
 
@@ -64,7 +62,6 @@ test("testing that the newtodo has an id", function (t) {
     }
   }
   t.pass();
-
   t.end();
 });
 
@@ -92,7 +89,6 @@ test('Delete: No deletion arg passed', function (t) {
   t.deepEqual(actual, expected, 'Arrays are cloned');
   t.end();
 });
-
 
 test('Delete: Remove id of 1', function (t) {
   var actual = todoFunctions.deleteTodo(array, 1);
@@ -187,4 +183,5 @@ test("Sort: A-Z", function (t) {
   t.deepEqual(actual, expected, "Sorted A-Z");
   t.end();
 });
+
 
