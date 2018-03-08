@@ -6,10 +6,10 @@
   // This is the dom node where we will keep our todo
   var container = document.getElementById('todo-container');
   var addTodoForm = document.getElementById('add-todo');
-  
+
 
   var state = [
-    { id: -3, description: 'first todo', done: false},
+    { id: -3, description: 'first todo', done: false },
     { id: -2, description: 'second todo', done: false },
     { id: -1, description: 'third todo', done: false },
   ]; // this is our initial todoList
@@ -20,6 +20,11 @@
 
     // you will need to use addEventListener
     var displayDescription = todo.description;
+
+    // add a checkbox
+    var checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    todoNode.appendChild(checkbox);
 
     // add span holding description 
     var text = document.createTextNode(displayDescription);
@@ -33,15 +38,11 @@
     });
     todoNode.appendChild(deleteButtonNode);
 
-    // adds the markTodo button - check/uncheck will be applied as CSS class
-    var doneButtonNode = document.createElement('button');
-    doneButtonNode.addEventListener('click', function(event) {
+    // This marks the todo as done or not done
+    checkbox.addEventListener('click', function () {
       var newState = todoFunctions.markTodo(state, todo.id);
-      update(newState);
+      state = newState;
     });
-    todoNode.appendChild(doneButtonNode);
-
-    // add classes for css
 
     return todoNode;
   };
@@ -72,7 +73,7 @@
 
     state.forEach(function (todo) {
       todoListNode.appendChild(createTodoNode(todo));
-     
+
     });
 
     // you may want to add a class for css
