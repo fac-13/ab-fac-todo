@@ -4,22 +4,32 @@
 <head>
   <meta charset="utf-8">
   <title>tdd todo</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-  <div id="sort-AZ">
-<button id='newtoold'>New to Old</button>
-<button id='az'>A-Z</button>
-  </div>
-  <div id="todo-container">
-    <ul>
-    </ul>
-  </div>
-  <form id="add-todo">
-    <input type="text" name="description" value="">
-    <input type="submit" name="" value="Submit">
-  </form>
+
+  <main>
+    <h1 class="title">My To Do List</h1>
+  
+      
+      <div id="sort-AZ">
+        <button id='newtoold'>New to Old</button>
+        <button id='az'>A-Z</button>
+      </div>
+
+      <div id="todo-container">
+        <ul>
+        </ul>
+      </div>
+   
+    <form id="add-todo">
+      <input type="text" placeholder="Add a new To Do" name="description" value="">
+      <input type="submit" name="" value="Submit">
+    </form>
+  </main>
+
 </body>
 <script type="text/javascript" src="./logic.js"></script>
 <script type="text/javascript" src="./dom.js"></script>

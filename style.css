@@ -1,0 +1,46 @@
+/* LAYOUT */
+
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: radial-gradient(circle at 100px 100px, deepskyblue, #fff);
+}
+
+main {
+   background-color: rgba(255, 255, 255, 0.5);
+   padding: 1.5rem;
+   border-radius: .3rem;
+   position: relative;
+   top: -20%;
+   font-family: 'Raleway', sans-serif;
+}
+
+#sort-AZ {
+    text-align: center
+}
+
+/* STYLING TODO LIST */
+
+.title {
+    font-size: 1.5rem;
+    margin: auto auto 1rem auto;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    text-align: left;
+
+}
+
+#todo-container {
+    padding-left: 0;
+    
+}
+
