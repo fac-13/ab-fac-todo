@@ -126,6 +126,8 @@ input[type="text"] {
 input[type="checkbox"] {
   height: 24px;
   width: 24px;
+  margin-right: 2%;
+  float: left;
 }
 
 input[type="checkbox"]:checked {
@@ -142,6 +144,14 @@ input[type="checkbox"]:checked {
   height: 24px;
   width: 24px;
   border: 1px;
+  position: relative;
+}
+
+.test {
+    display: inline-block;
+    width: 70%;
+    margin: 0;
+    margin-right: 7%
 }
 
 @media screen and (max-width: 500px) {
