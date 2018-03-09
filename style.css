@@ -4,8 +4,9 @@ html {
   height: 100%;
 }
 
+input,
 button:hover {
-  cursor: pointer;
+  cursor: url(img/star.png), auto;
 }
 
 body {
