@@ -73,13 +73,11 @@ ul {
   font-family: "Indie Flower", cursive;
   font-size: 1.5em;
   color: darkslategrey;
-  max-width: 20rem;
-  word-wrap: break-word;
 }
 
 #todo-container {
   padding-left: 0;
-  height: 15rem;
+  height: 20rem;
   overflow: scroll;
 }
 
@@ -157,14 +155,9 @@ input[type="checkbox"]:checked {
     margin-right: 7%
 }
 
-@media screen and (max-width: 768px) {
-  html {
-      margin: 0;
-      overflow: auto;
-  }
+@media screen and (max-width: 500px) {
   body {
     margin: 0;
-    overflow: auto;
     padding: 0;
   }
   main {
@@ -178,8 +171,5 @@ input[type="checkbox"]:checked {
   h1,
   h2 {
     font-size: 1.6em;
-  }
-  ul {
-  max-width: 15rem;
   }
 }
