@@ -33,7 +33,7 @@
     //todoNode.appendChild(text);
 
     var para = document.createElement('p');
-    para.classList.add('test');
+    para.classList.add('para-style');
     para.appendChild(text);
     todoNode.appendChild(para);
 
