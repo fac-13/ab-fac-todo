@@ -79,6 +79,7 @@ ul {
   padding-left: 0;
   height: 20rem;
   overflow: scroll;
+  max-width: 400px;
 }
 
 #newtoold,
