@@ -30,7 +30,13 @@
 
     // add span holding description
     var text = document.createTextNode(displayDescription);
-    todoNode.appendChild(text);
+    //todoNode.appendChild(text);
+
+    var para = document.createElement('p');
+    para.classList.add('para-style');
+    para.appendChild(text);
+    todoNode.appendChild(para);
+
     // todoNode.addEventListener("click", function() {
     //   prompt("Edit your task",displayDescription);
     // });

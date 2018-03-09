@@ -4,8 +4,9 @@ html {
   height: 100%;
 }
 
+input,
 button:hover {
-  cursor: pointer;
+  cursor: url(img/star.png), auto;
 }
 
 body {
@@ -127,6 +128,8 @@ input[type="text"] {
 input[type="checkbox"] {
   height: 24px;
   width: 24px;
+  margin-right: 2%;
+  float: left;
 }
 
 input[type="checkbox"]:checked {
@@ -143,6 +146,14 @@ input[type="checkbox"]:checked {
   height: 24px;
   width: 24px;
   border: 1px;
+  position: relative;
+}
+
+.para-style {
+    display: inline-block;
+    width: 70%;
+    margin: 0;
+    margin-right: 7%
 }
 
 @media screen and (max-width: 500px) {
@@ -162,4 +173,14 @@ input[type="checkbox"]:checked {
   h2 {
     font-size: 1.6em;
   }
+}
+
+@media screen and (max-width: 425px) {
+    .para-style {
+        width: 67%;
+    }
+
+    #todo-container {
+        width: 100vw;
+    }
 }
