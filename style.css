@@ -143,6 +143,8 @@ input[type="checkbox"]:checked {
   height: 24px;
   width: 24px;
   border: 1px;
+  float: right;
+  clear: both;
 }
 
 @media screen and (max-width: 500px) {
