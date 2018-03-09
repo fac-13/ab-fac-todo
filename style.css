@@ -72,6 +72,8 @@ ul {
   font-family: "Indie Flower", cursive;
   font-size: 1.5em;
   color: darkslategrey;
+  max-width: 20rem;
+  word-wrap: break-word;
 }
 
 #todo-container {
@@ -165,5 +167,8 @@ input[type="checkbox"]:checked {
   h1,
   h2 {
     font-size: 1.6em;
+  }
+  ul {
+  max-width: 15rem;
   }
 }
