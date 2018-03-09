@@ -126,6 +126,7 @@ input[type="text"] {
 input[type="checkbox"] {
   height: 24px;
   width: 24px;
+  margin-right: 2%;
 }
 
 input[type="checkbox"]:checked {
