@@ -80,8 +80,8 @@ ul {
   overflow: scroll;
 }
 
-#newtoold,
-#az,
+#alphabetical,
+#date,
 input[type="submit"] {
   border-radius: 30px;
   padding: 10px 20px;
@@ -92,12 +92,13 @@ input[type="submit"] {
   font-weight: 700;
 }
 
-#newtoold {
+
+#date {
   background: aquamarine;
   box-shadow: inset -4px -4px 10px 5px rgba(2, 92, 38, 0.3);
 }
 
-#az {
+#alphabetical {
   background: pink;
   box-shadow: inset -4px -4px 10px 5px rgba(244, 110, 120, 0.6);
 }
@@ -107,8 +108,8 @@ input[type="submit"] {
   box-shadow: inset -4px -4px 10px 5px rgba(2, 92, 38, 0.3);
 }
 
-#newtoold:hover,
-#az:hover,
+#alphabetical:hover,
+#date:hover,
 input[type="submit"]:hover {
   border: 2px solid rgba(0, 0, 0, 0.7);
 }

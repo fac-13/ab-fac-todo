@@ -94,25 +94,38 @@
     container.replaceChild(todoListNode, container.firstChild);
   };
 
-  var sortButton = document.getElementById("az");
-  sortButton.addEventListener("click", function() {
-    var newarr = todoFunctions.sortTodos(state);
+  // SORT FUNCTION
+  // alphabetical
+  var sortAplhaButton = document.getElementById("alphabetical");
+  sortAplhaButton.addEventListener("click", function() {
+    var newarr = todoFunctions.sortTodos(state, sortAplhaButton.value);
     update(newarr);
   });
-
-  var newtoold = document.getElementById("newtoold");
-  newtoold.addEventListener("click", function() {
-    update(state.reverse());
-  });
-
-  newtoold.addEventListener("click", function() {
-    var newoldbutton = document.getElementById("newtoold");
-    if (newoldbutton.textContent === "New to Old") {
-      newoldbutton.textContent = "Old to New";
+  sortAplhaButton.addEventListener("click", function() {
+    if (sortAplhaButton.textContent === 'Sort "A-Z"') {
+      sortAplhaButton.textContent = 'Sort "Z-A"';
+      sortAplhaButton.value ='za'
     } else {
-      newoldbutton.textContent = "New to Old";
+      sortAplhaButton.textContent = 'Sort "A-Z"';
+      sortAplhaButton.value = 'az';
     }
   });
+  // by date added
+  var sortDateButton = document.getElementById("date");
+  sortDateButton.addEventListener("click", function() {
+    var newarr = todoFunctions.sortTodos(state, sortDateButton.value);
+    update(newarr);
+  });
+  sortDateButton.addEventListener("click", function() {
+    if (sortDateButton.textContent === "New to Old") {
+      sortDateButton.textContent = "Old to New";
+      sortDateButton.value ='oldtonew'
+    } else {
+      sortDateButton.textContent = "New to Old";
+      sortDateButton.value = 'newtoold';
+    }
+  });
+
 
   if (container) renderState(state);
 })();

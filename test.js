@@ -189,15 +189,17 @@ var sortArr = [
   { id: 3, description: "avocado", done: true },
   { id: 4, description: "milk", done: true },
   { id: 5, description: "milk", done: true },
-  { id: 6, description: "tomatoes", done: true }
+  { id: 6, description: "tomatoes", done: true },
+  { id: 7, description: "Eggs", done: true },
 ];
 
 test("Sort: A-Z", function (t) {
-  var actual = todoFunctions.sortTodos(sortArr); // fixed from deleteTodo -> sortTodos function! 
+  var actual = todoFunctions.sortTodos(sortArr, 'az'); // fixed from deleteTodo -> sortTodos function! 
   var expected = [
     { id: 3, description: "avocado", done: true },
     { id: 2, description: "bacon", done: true },
     { id: 1, description: "eggs", done: true },
+    { id: 7, description: "Eggs", done: true },
     { id: 4, description: "milk", done: true },
     { id: 5, description: "milk", done: true },
     { id: 0, description: "tea", done: true },

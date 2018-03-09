@@ -1,8 +1,7 @@
 // Part 1. Fill in any missing parts of the todoFunction object!
 // you can access these on todo.todoFunctions
 // For part one we expect you to use tdd
-// use this 
-
+// use this
 
 var todoFunctions = {
   // todoFunctions.generateId() will give you a unique id
@@ -41,9 +40,11 @@ var todoFunctions = {
     // hint: array.filter
     // alternative one-liner solution
     // return todoFunctions.cloneArrayOfObjects(todos).filter(function(todoObj) {
-    var cloneTodos = todoFunctions.cloneArrayOfObjects(todos).filter(function(todoObj){
-      return todoObj.id !== idToDelete      
-    });
+    var cloneTodos = todoFunctions
+      .cloneArrayOfObjects(todos)
+      .filter(function(todoObj) {
+        return todoObj.id !== idToDelete;
+      });
     return cloneTodos;
   },
 
@@ -61,27 +62,37 @@ var todoFunctions = {
     }));
   },
 
-  sortTodos: function(todos) {
+  sortTodos: function(todos, filter) {
     // stretch goal! Do this last
     // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
     // sortFunction will have same signature as the sort function in array.sort
     // hint: array.slice, array.sort
     var cloneTodos = todoFunctions.cloneArrayOfObjects(todos);
-    cloneTodos.sort(function(a, b) {
-      var descA = a.description,
-        descB = b.description;
-      if (descA < descB)
-        //sort string ascending
-        return -1;
-      if (descA > descB) return 1;
-      return 0; //default return value (no sorting)
-    });
+    switch (filter) {
+      case "az":
+        cloneTodos.sort(function(a, b) {
+          return a.description.toLowerCase() > b.description.toLowerCase();
+        });
+        break;
+      case "za":
+        cloneTodos.sort(function(a, b) {
+          return a.description.toLowerCase() < b.description.toLowerCase();
+        });
+        break;
+      case "newtoold":
+        cloneTodos.sort(function(a, b) {
+          return a.id > b.id;
+        });
+        break;
+      case "oldtonew":
+        cloneTodos.sort(function(a, b) {
+          return a.id < b.id;
+        });
+        break;
+    }
     return cloneTodos;
   }
 };
-
-
-
 
 // Why is this if statement necessary?
 // The answer has something to do with needing to run code both in the browser and in Node.js
@@ -89,4 +100,4 @@ var todoFunctions = {
 // http://www.matteoagosti.com/blog/2013/02/24/writing-javascript-modules-for-both-browser-and-node/
 if (typeof module !== "undefined") {
   module.exports = todoFunctions;
-  };
+}
