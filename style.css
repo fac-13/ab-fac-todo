@@ -148,7 +148,7 @@ input[type="checkbox"]:checked {
   position: relative;
 }
 
-.test {
+.para-style {
     display: inline-block;
     width: 70%;
     margin: 0;
@@ -172,4 +172,14 @@ input[type="checkbox"]:checked {
   h2 {
     font-size: 1.6em;
   }
+}
+
+@media screen and (max-width: 425px) {
+    .para-style {
+        width: 67%;
+    }
+
+    #todo-container {
+        width: 100vw;
+    }
 }
