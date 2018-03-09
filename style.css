@@ -76,7 +76,7 @@ ul {
 
 #todo-container {
   padding-left: 0;
-  height: 20rem;
+  height: 15rem;
   overflow: scroll;
 }
 
@@ -144,9 +144,14 @@ input[type="checkbox"]:checked {
   border: 1px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
+  html {
+      margin: 0;
+      overflow: auto;
+  }
   body {
     margin: 0;
+    overflow: auto;
     padding: 0;
   }
   main {
