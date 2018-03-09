@@ -3,6 +3,11 @@
 html {
   height: 100%;
 }
+
+button:hover {
+  cursor: pointer;
+}
+
 body {
   height: 100%;
   display: flex;
