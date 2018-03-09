@@ -116,7 +116,7 @@ input[type=text] {
     border-radius: 5px;
     min-width: 250px;
     margin: auto;
-
+    font-size: 1rem;
 }
 
   input[type=checkbox] {
