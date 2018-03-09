@@ -40,12 +40,9 @@ var todoFunctions = {
     // return a new array, this should not contain any todo with an id of idToDelete
     // hint: array.filter
     var cloneTodos = todoFunctions.cloneArrayOfObjects(todos);
-    var nonIdMatch = cloneTodos.filter(function(todoObj) {
-      if (todoObj.id !== idToDelete) {
-        return todoObj;
-      }
-    });
-    return nonIdMatch;
+    cloneTodos.filter(function(todoObj) {
+    return todoObj.id !== idToDelete;
+  });
   },
 
   markTodo: function(todos, idToMark) {
@@ -55,13 +52,9 @@ var todoFunctions = {
     // hint: array.map
     var cloneTodos = todoFunctions.cloneArrayOfObjects(todos);
     return clone = cloneTodos.map(function(value){
-      if(value.id === idToMark) {
-        if(value.done === false) {
-          value.done = true;
-        } else if(value.done === true) { // not covered in current tests
-          value.done = false; // not covered in current tests
-        }
-      }
+    if (value.id === idToMark) {
+      value.done = !value.done;
+    }
       return value;
     });
   },
