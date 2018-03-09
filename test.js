@@ -10,11 +10,10 @@ test('Tape is working', function (t) {
 });
 
 // TESTS FOR NEW TO DO //
-
 test("test a todo is an array", function (t) {
   var actual = todoFunctions.addTodo([], {}); // the 'todoFunction' refers to the name of the variable you require (NOT the name of the object in the other file)
   if (Array.isArray(actual)) {
-    t.pass();
+    t.pass("retuns an array");
   } else {
     t.fail();
   }
@@ -32,14 +31,12 @@ test("testing that the array only contains objects unless empty", function (t) {
   t.end();
 });
 
+
 test("testing that the newTodo is added to the array", function (t) {
-  var actual = todoFunctions.addTodo([], { description: "hi" }); // the 'todoFunction' refers to the name of the variable you require (NOT the name of the object in the other file)
-  var last = actual[actual.length - 1].description;
-  if (last === "hi") {
-    t.pass();
-  } else {
-    t.fail();
-  }
+  var arr = todoFunctions.addTodo([], { description: "hi" })
+  var actual = arr[arr.length - 1].description;
+  var expected = "hi";
+  t.equal(actual, expected, 'should return string');
   t.end();
 });
 
@@ -50,7 +47,7 @@ test("testing that the newtodo has a done property", function (t) {
       t.fail();
     }
   }
-  t.pass();
+  t.pass("new todo has a done property");
   t.end();
 });
 
@@ -61,7 +58,7 @@ test("testing that the newtodo has an id", function (t) {
       t.fail();
     }
   }
-  t.pass();
+  t.pass("new todo has an id property");
   t.end();
 });
 
